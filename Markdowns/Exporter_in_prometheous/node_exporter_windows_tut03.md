@@ -1,0 +1,1 @@
+# <ins> How to Get Windows Machine Metrics using the WMI_exporter </ins> #
