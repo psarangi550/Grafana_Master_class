@@ -69,6 +69,6 @@
 
     ```
 
-- when we use the `sum/max/min/average` it will be consider over the `dimentsion` it will return the `aggregated value` even though the `element name comes as {}` we can group them well in order to see the `element name`
+- when we use the `sum/max/min/average/count/count_values` it will be consider over the `dimentsion` it will return the `aggregated value` even though the `element name comes as {}` we can group them well in order to see the `element name`
 
 
