@@ -71,7 +71,7 @@
 
     ```
         predict_linear(windows_logical_disk_free_bytes{volume="C:"}[1h],1)/1024/1024/1024
-        # here this will show how much space will be there in the next 1 hr based on the past 1hr value 
+        # here this will show how much space will be there in the next 1 seconds based on the past 1hr value 
         # here we are using the windows_logical_disk_free_bytes as the metrics 
         # this predict_linear() can only work on the `gauge metrics`
         # this take an `range vector` and `numeric time value` as the args
@@ -82,11 +82,27 @@
 
     ```
         predict_linear(node_memory_MemFree_bytes{job="node_exporter"}[1h],1)/1024/1024/1024
-        # here this will show how much space will be there in the next 1 hr based on the past 1hr value 
+        # here this will show how much space will be there in the next 1 seconds based on the past 1hr value 
         # here we are using the node_memory_MemFree_bytes as the metrics 
         # this predict_linear() can only work on the `gauge metrics`
         # this take an `range vector` and `numeric time value` as the args
         # also return the instant vector as an outcome
 
     ```
+
+    - if we want to calcuate for the `next 2 hr` then it can be written as below
+
+    ```
+        predict_linear(node_memory_MemFree_bytes{job="node_exporter"}[1h],2*60*60)/1024/1024
+        # here this will show how much space will be there in the next 2 hour in seconds format  based on the past 1hr value 
+        # here we are using the node_memory_MemFree_bytes as the metrics 
+        # this predict_linear() can only work on the `gauge metrics`
+        # this take an `range vector` and `numeric time value` as the args
+        # also return the instant vector as an outcome
+
+    ```
+
+
+
+    
 
